@@ -3,7 +3,12 @@ class Atm{
     private int cardNumber = 1234;
 
     void withdrow(int amount){
-        balance = balance - amount;
+        if (balance < amount) {
+            System.out.println("Invalied Amount !");
+        }
+        else{
+            balance = balance - amount;
+        }
     }
     
     public void display(){
@@ -15,6 +20,9 @@ class Atm{
 public class Encapsulation {
     public static void main(String[] args) {
         Atm userOne = new Atm();
+        userOne.display();
+        userOne.withdrow(500);
+        System.out.println("Current Balanece: ");
         userOne.display();
         // userOne.balance = 50000;
         // userOne.cardNumber = 234876;
